@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            margin: 50px 350px;
+            width: 500px;
+            height: 300px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+
+    <script>
+        function dekor1() {
+            dekor_1 = document.getElementById("home");
+            dekor_1.style.color = "aqua";
+        }
+
+        function dekor2() {
+            dekor_2 = document.getElementById("home");
+            dekor_2.style.color = "black";
+        }
+        
+        function imagepicker() {
+            const list_image = ["gambar anya.jpg", "loid.jpg", "yor.jpg", "fiona.jpg", "spyxfamily.png", "spyxfamily2.jpg"]
+            let pilihan = document.getElementById("option");
+            if(pilihan.value == "anya") {
+                let select = list_image[0];
+                document.getElementById("image").src = `images/${select}`
+                alert("gambar anya.jpg")
+            }
+            
+
+            if(pilihan.value == "loid") {
+                let select = list_image[1];
+                document.getElementById("image").src = `images/${select}`
+                alert("loid.jpg")
+            }
+
+            if(pilihan.value == "yor") {
+                let select = list_image[2];
+                document.getElementById("image").src = `images/${select}`
+                alert("yor.jpg")
+            }
+
+            if(pilihan.value == "fiona") {
+                let select = list_image[3];
+                document.getElementById("image").src = `images/${select}`
+                alert("fiona.jpg")
+            }
+
+            if(pilihan.value == "Spyxfamily") {
+                let select = list_image[4];
+                document.getElementById("image").src = `images/${select}`
+                alert("spyxfamily.png")
+            }
+
+            if(pilihan.value == "spyxfamily2") {
+                let select = list_image[5];
+                document.getElementById("image").src = `images/${select}`
+                alert("spyxfamily2.jpg")
+            }
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <a href="" onmouseover="dekor1()" onmouseout="dekor2()" id="home"><h1>Welcome to Diss Image Picker</h1></a>
+    <hr>
+    <br>
+    <select id="option" onchange="imagepicker()">
+        <option value="" selected>Pilih Gambar</option>
+        <option value="anya">anya</option>
+        <option value="loid">loid</option>
+        <option value="yor">yor</option>
+        <option value="fiona">fiona</option>
+        <option value="spyxfamily">spyxfamily</option>
+        <option value="spyxfamily2">spyxfamily2</option>
+    </select>
+    <br>
+    <div class="container" id="container">
+        <div class="box" id="box">
+            <img id="image">
+        </div>
+    </div>
+
+
+</body>
+</html>
